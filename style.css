@@ -344,24 +344,24 @@ body {
 
 /* Mobile menu: hidden by default */
 #navMenu {
-  display: none;
+/*  display: none;
   position: absolute; /* or fixed if you prefer */
-  top: 60px; /* adjust to match header height */
-  right: 0;
+/*  top: 60px; /* adjust to match header height */
+/*  right: 0;
   left: 0;
   background: #fff; /* change to match your design */
-  z-index: 999;
+ /* z-index: 999;
   padding: 1rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 /* Shown when toggled */
 #navMenu.open {
-  display: block;
+ /* display: block;
 }
 
 /* Desktop: show nav inline and hide mobile menu toggle */
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   #navMenu {
     display: block !important;
     position: static;
@@ -378,13 +378,39 @@ body {
 
 /* Menu toggle cursor + a11y */
 .menu-toggle {
-  cursor: pointer;
+/*  cursor: pointer;
   user-select: none;
   font-size: 1.25rem;
 }
 
 /* Optional: prevent background scroll when nav open */
 html.nav-open {
-  overflow: hidden;
+/*  overflow: hidden;
 }
+
+    /* mobile nav: hide by default, show when .open */
+#navMenu {
+  display: none;
+}
+
+/* shown when open */
+#navMenu.open {
+  display: block;
+}
+
+/* show nav on larger screens and hide the hamburger */
+@media (min-width: 768px) {
+  .menu-toggle { display: none; }
+  #navMenu { display: block !important; }
+  .desktop-only { display: inline-block; }
+}
+
+/* ensure the hamburger is visually clickable */
+.menu-toggle {
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+}
+
 
