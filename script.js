@@ -1,105 +1,44 @@
 <script>
- /*   const toggle = document.getElementById("menuToggle");
-    const nav = document.getElementById("navMenu");
+// Mobile menu toggle and link handling
+// - Toggles the #navMenu open/closed
+// - When a nav link is clicked the menu closes but navigation proceeds normally
 
-    toggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-    });*/
-
-// Toggle the mobile navigation menu
 document.addEventListener('DOMContentLoaded', function () {
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-
-  if (!menuToggle || !navMenu) {
-    // Elements not found — check IDs in index.html
-    console.warn('Menu toggle or nav menu element not found.');
-    return;
-  }
-
-  // Toggle function
-  function toggleMenu() {
-    const isOpen = navMenu.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    menuToggle.classList.toggle('open', isOpen);
-    // prevent background from scrolling when menu open (optional)
-    document.documentElement.classList.toggle('nav-open', isOpen);
-  }
-
-  menuToggle.addEventListener('click', function (e) {
-    e.stopPropagation();
-    toggleMenu();
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', function (e) {
-    if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && e.target !== menuToggle) {
-      toggleMenu();
-    }
-  });
-
-  // Close with Escape
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && navMenu.classList.contains('open')) {
-      toggleMenu();
-    }
-  });
-});*/
-
-    // script.js
-// Simple, accessible mobile menu toggle
-
-document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
   if (!menuToggle || !navMenu) return;
 
-  // Ensure initial ARIA state
-  menuToggle.setAttribute('role', 'button');
-  menuToggle.setAttribute('aria-controls', 'navMenu');
-  menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.tabIndex = 0;
-
-  // Toggle handler
-  function toggleMenu() {
+  // Toggle mobile menu
+  menuToggle.addEventListener('click', function () {
     const isOpen = navMenu.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-  }
-
-  menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleMenu();
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    // Optional: add body class to prevent scrolling when menu open
+    document.body.classList.toggle('menu-open', isOpen);
   });
 
-  // Allow keyboard activation (Enter / Space)
-  menuToggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleMenu();
-    }
+  // Close menu when a link is clicked (allow navigation to proceed)
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+      // Close the mobile menu so the next page loads with menu closed
+      navMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+      // IMPORTANT: do not call event.preventDefault() here — let the anchor navigate
+    });
   });
 
-  // Close when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-      if (navMenu.classList.contains('open')) {
-        navMenu.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    }
-  });
-
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
+  // Optional: close menu on Escape
+  document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && navMenu.classList.contains('open')) {
       navMenu.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.focus();
+      document.body.classList.remove('menu-open');
     }
-  });
-});
+  });    
+
 </script>
+
 
 
 
