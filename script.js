@@ -1,5 +1,5 @@
 <script>
-    const toggle = document.getElementById("menuToggle");
+ /*   const toggle = document.getElementById("menuToggle");
     const nav = document.getElementById("navMenu");
 
     toggle.addEventListener("click", () => {
@@ -44,8 +44,63 @@ document.addEventListener('DOMContentLoaded', function () {
       toggleMenu();
     }
   });
+});*/
+
+    // script.js
+// Simple, accessible mobile menu toggle
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  if (!menuToggle || !navMenu) return;
+
+  // Ensure initial ARIA state
+  menuToggle.setAttribute('role', 'button');
+  menuToggle.setAttribute('aria-controls', 'navMenu');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.tabIndex = 0;
+
+  // Toggle handler
+  function toggleMenu() {
+    const isOpen = navMenu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  }
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Allow keyboard activation (Enter / Space)
+  menuToggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleMenu();
+    }
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      if (navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+      navMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.focus();
+    }
+  });
 });
 </script>
+
 
 
 
