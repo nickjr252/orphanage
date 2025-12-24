@@ -341,3 +341,50 @@ body {
         display: none;
     }
 }
+
+/* Mobile menu: hidden by default */
+#navMenu {
+  display: none;
+  position: absolute; /* or fixed if you prefer */
+  top: 60px; /* adjust to match header height */
+  right: 0;
+  left: 0;
+  background: #fff; /* change to match your design */
+  z-index: 999;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Shown when toggled */
+#navMenu.open {
+  display: block;
+}
+
+/* Desktop: show nav inline and hide mobile menu toggle */
+@media (min-width: 768px) {
+  #navMenu {
+    display: block !important;
+    position: static;
+    box-shadow: none;
+    padding: 0;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  .donate-btn.desktop-only {
+    display: inline-block;
+  }
+}
+
+/* Menu toggle cursor + a11y */
+.menu-toggle {
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.25rem;
+}
+
+/* Optional: prevent background scroll when nav open */
+html.nav-open {
+  overflow: hidden;
+}
+
