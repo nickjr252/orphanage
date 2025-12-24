@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #0b3c5d;
+    color: #fff;
+    position: sticky;
+    top: 0;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.donate-btn {
+    background: #ff9800;
+    padding: 8px 15px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Hero */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('images/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    margin: 20px 0;
+}
+
+.btn {
+    background: #ff9800;
+    padding: 12px 25px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Sections */
+.section {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    color: #0b3c5d;
+}
+
+/* Impact */
+.impact {
+    display: flex;
+    justify-content: space-around;
+    background: #f4f4f4;
+    padding: 40px;
+}
+
+.impact-box h3 {
+    color: #ff9800;
+    font-size: 2rem;
+}
+
+/* Programs */
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.program-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* CTA */
+.cta {
+    background: #0b3c5d;
+    color: #fff;
+    padding: 60px;
+    text-align: center;
+}
+
+/* Contact */
+.contact form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact button {
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Contact Page */
+.contact-page p {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.contact-info,
+.contact-form {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    color: #0b3c5d;
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+.contact-form button {
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+
+/* Footer */
+.footer {
+    background: #0b3c5d;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .impact {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Team Page */
+.team-page p {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.team-hierarchy {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.team-card {
+    background: #f9f9f9;
+    padding: 25px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-card h3 {
+    color: #0b3c5d;
+    margin-bottom: 5px;
+}
+
+.team-card h4 {
+    color: #ff9800;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+/* Founder Highlight */
+.founder {
+    border: 2px solid #ff9800;
+    max-width: 400px;
+}
+
+/* About Page */
+.about-page .intro {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.about-block {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+.about-block h3,
+.about-history h3 {
+    color: #0b3c5d;
+    margin-bottom: 10px;
+}
+
+.about-history {
+    max-width: 900px;
+    margin: 40px auto;
+    line-height: 1.8;
+}
