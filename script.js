@@ -4,7 +4,7 @@
 
     toggle.addEventListener("click", () => {
         nav.classList.toggle("active");
-    });
+    });*/
 
 // Toggle the mobile navigation menu
 document.addEventListener('DOMContentLoaded', function () {
@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
 
 
 
