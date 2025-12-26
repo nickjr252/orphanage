@@ -364,6 +364,50 @@ body {
 }
 }
 
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+
+        /* Move to far left */
+        order: 1;
+        margin-right: auto;
+    }
+
+    .logo {
+        order: 2;
+        margin: 0 auto;
+        font-size: 20px;
+    }
+
+    #navMenu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        display: none;
+    }
+
+    #navMenu.active {
+        display: block;
+    }
+
+    #navMenu ul {
+        flex-direction: column;
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+}
+
+
+
 
 
 
