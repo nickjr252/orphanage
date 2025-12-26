@@ -291,22 +291,48 @@ body {
 }
 
 
+/* Add default hidden state for mobile toggle */
+.menu-toggle {
+    display: none;
+}
 
-   
+/* ...existing styles... */
+
+/* Responsive */
+@media(max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .impact {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Mobile menu styles & improved clickability */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
         font-size: 28px;
         cursor: pointer;
+        color: #fff;
+        background: transparent;
+        border: none;
+        padding: 6px 10px;
+        z-index: 1100; /* keep toggle above other elements */
     }
 
+    /* Make nav overlay sit under the toggle and be clickable */
     #navMenu {
         display: none;
         width: 100%;
-        background: #fff;
+        background: #0b3c5d; /* match navbar color for better contrast */
         position: absolute;
-        top: 70px;
+        top: 60px; /* adjust if your navbar height changes */
         left: 0;
+        z-index: 1000;
     }
 
     #navMenu.active {
@@ -316,12 +342,28 @@ body {
     #navMenu ul {
         flex-direction: column;
         padding: 10px 0;
+        margin: 0;
+    }
+
+    /* Make each menu item easier to tap */
+    #navMenu ul li {
+        margin: 0;
+        padding: 8px 16px;
+    }
+
+    #navMenu ul li a {
+        color: #fff;
+        display: block;
+        padding: 6px 0;
+        text-decoration: none;
     }
 
     .desktop-only {
         display: none;
     }
 }
+}
+
 
 
 
