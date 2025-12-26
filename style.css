@@ -312,7 +312,7 @@ body {
 }
 
 /* Mobile menu styles & improved clickability */
-@media (max-width: 768px) {
+/* c @media (max-width: 768px) {
     .menu-toggle {
         display: block;
         font-size: 28px;
@@ -326,12 +326,12 @@ body {
 
     /* Make nav overlay sit under the toggle and be clickable */
     #navMenu {
-        display: none;
+       /* c display: none;
         width: 100%;
         background: #0b3c5d; /* match navbar color for better contrast */
-        position: absolute;
+       /* c position: absolute;
         top: 60px; /* adjust if your navbar height changes */
-        left: 0;
+       /* c left: 0;
         z-index: 1000;
     }
 
@@ -347,7 +347,7 @@ body {
 
     /* Make each menu item easier to tap */
     #navMenu ul li {
-        margin: 0;
+      /*  margin: 0;
         padding: 8px 16px;
     }
 
@@ -362,7 +362,7 @@ body {
         display: none;
     }
 }
-}
+}*/ c
 
 @media (max-width: 768px) {
 
@@ -372,17 +372,17 @@ body {
         cursor: pointer;
 
         /* Move to far left */
-        order: 1;
-        margin-right: auto;
+       order: 1;
+       margin-right: auto;
     }
 
-    .logo {
+   .logo {
         order: 2;
         margin: 0 auto;
         font-size: 20px;
     }
 
-    #navMenu {
+  #navMenu {
         position: absolute;
         top: 70px;
         left: 0;
@@ -391,7 +391,7 @@ body {
         display: none;
     }
 
-    #navMenu.active {
+   #navMenu.active {
         display: block;
     }
 
@@ -405,6 +405,7 @@ body {
         display: none;
     }
 }
+
 
 
 
