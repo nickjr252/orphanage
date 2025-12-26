@@ -330,7 +330,7 @@ body {
     #navMenu {
         display: none;
         width: 100%;
-        background: #0b3c5d; /* match navbar color for better contrast */
+        background: #1aa7d6; /* match navbar color for better contrast */
        position:absolute;
         top: 60px; /* adjust if your navbar height changes */
         left: 0;
@@ -371,6 +371,7 @@ body {
 
   
        
+
 
 
 
