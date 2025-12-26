@@ -322,6 +322,8 @@ body {
         border: none;
         padding: 6px 10px;
         z-index: 1100; /* keep toggle above other elements */
+        margin-right: auto;
+        order: 1;
     }
 
     /* Make nav overlay sit under the toggle and be clickable */
@@ -329,9 +331,9 @@ body {
         display: none;
         width: 100%;
         background: #0b3c5d; /* match navbar color for better contrast */
-       position:relative; /*absolute;*/
+       position:absolute;
         top: 60px; /* adjust if your navbar height changes */
-        left: 1;
+        left: 0;
         z-index: 1000;
     }
 
@@ -340,7 +342,7 @@ body {
     }
 
     #navMenu ul {
-        flex-direction: row;
+        flex-direction:column;
         padding: 10px 0;
         margin: 0;
     }
@@ -358,6 +360,7 @@ body {
         text-decoration: none;
     }
 
+
     .desktop-only {
         display: none;
     }
@@ -368,6 +371,7 @@ body {
 
   
        
+
 
 
 
