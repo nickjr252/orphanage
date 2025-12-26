@@ -323,7 +323,7 @@ body {
         padding: 6px 10px;
         z-index: 1100; /* keep toggle above other elements */
         margin-right: auto;
-        order: 2;
+        order: 4;
     }
 
     /* Make nav overlay sit under the toggle and be clickable */
@@ -371,6 +371,7 @@ body {
 
   
        
+
 
 
 
