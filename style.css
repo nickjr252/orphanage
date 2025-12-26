@@ -329,9 +329,9 @@ body {
         display: none;
         width: 100%;
         background: #0b3c5d; /* match navbar color for better contrast */
-       position: absolute;
+       position:relative; /*absolute;*/
         top: 60px; /* adjust if your navbar height changes */
-        left: 0;
+        left: 1;
         z-index: 1000;
     }
 
@@ -340,7 +340,7 @@ body {
     }
 
     #navMenu ul {
-        flex-direction: column;
+        flex-direction: row;
         padding: 10px 0;
         margin: 0;
     }
@@ -368,6 +368,7 @@ body {
 
   
        
+
 
 
 
